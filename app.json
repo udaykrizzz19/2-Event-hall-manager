@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "event-hall-manager-2",
-    "slug": "event-hall-manager-2",
+    "slug": "-event-hall-manager-1",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -17,7 +17,8 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.udaykrizzz.eventhallmanager1"
     },
     "web": {
       "output": "static",
@@ -37,6 +38,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "4b5a69b5-057d-4e91-b571-22f3bd51318d"
+      }
+    },
+    "owner": "udaykrizzz"
   }
 }
