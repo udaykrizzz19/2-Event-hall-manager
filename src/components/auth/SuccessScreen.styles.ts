@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   illustrationContainer: {
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 20,
+    marginTop: 80,
   },
   textGroup: {
     alignItems: "center",

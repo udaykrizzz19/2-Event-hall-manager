@@ -10,9 +10,8 @@ interface WelcomeScreenProps {
 export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onGetStarted }) => {
   return (
     <View style={styles.container}>
-      {/* Top Graphic Wave SVG Image using expo-image */}
       <Image
-        source={require("../../../../../assets/images/loginSignup/welcome.svg")}
+        source={require("../../../assets/images/loginSignup/welcome.svg")}
         style={styles.topImage}
         contentFit="cover"
       />
