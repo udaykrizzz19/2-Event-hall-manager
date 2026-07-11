@@ -8,6 +8,7 @@ import {
   SafeAreaView,
 } from "react-native";
 import { Image } from "expo-image";
+import { useRouter } from "expo-router";
 import { styles } from "./LoginForm.styles";
 
 interface LoginFormProps {
@@ -15,6 +16,7 @@ interface LoginFormProps {
 }
 
 export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailFocused, setEmailFocused] = useState(false);
@@ -172,7 +174,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
           {/* Footer Signup */}
           <View style={styles.signupContainer}>
             <Text style={styles.signupText}>Don’t have an account? </Text>
-            <TouchableOpacity activeOpacity={0.7}>
+            <TouchableOpacity activeOpacity={0.7} onPress={() => router.replace("/signup")}>
               <Text style={styles.signupLink}>Sign Up here</Text>
             </TouchableOpacity>
           </View>
