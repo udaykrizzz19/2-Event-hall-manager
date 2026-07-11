@@ -43,7 +43,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
         {/* Brand Logo */}
         <View style={styles.logoContainer}>
           <Image
-            source={require("../../../assets/images/logo/Logo.svg")}
+            source={require("../../../../assets/images/logo/Logo.svg")}
             style={styles.logoImage}
             contentFit="contain"
           />
@@ -62,7 +62,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
             ]}
           >
             <Image
-              source={require("../../../assets/images/loginSignup/Mail.svg")}
+              source={require("../../../../assets/images/loginSignup/Mail.svg")}
               style={[styles.leftIcon, { width: 22, height: 22 }]}
               contentFit="contain"
             />
@@ -96,7 +96,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
             ]}
           >
             <Image
-              source={require("../../../assets/images/loginSignup/Password.svg")}
+              source={require("../../../../assets/images/loginSignup/Password.svg")}
               style={[styles.leftIcon, { width: 24, height: 24 }]}
               contentFit="contain"
             />
@@ -161,7 +161,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
           <TouchableOpacity style={styles.googleButton} activeOpacity={0.8}>
             <View style={styles.googleIconContainer}>
               <Image
-                source={require("../../../assets/images/loginSignup/google_logo.svg")}
+                source={require("../../../../assets/images/loginSignup/google_logo.svg")}
                 style={{ width: 22, height: 22 }}
                 contentFit="contain"
               />

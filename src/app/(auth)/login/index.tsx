@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { View } from "react-native";
 import { useRouter } from "expo-router";
-import { WelcomeScreen } from "../../../components/auth/WelcomeScreen";
-import { LoginForm } from "../../../components/auth/LoginForm";
-import { SuccessScreen } from "../../../components/auth/SuccessScreen";
-import { styles } from "../../../components/auth/login.styles";
+import { WelcomeScreen } from "../../../components/auth/login/WelcomeScreen";
+import { LoginForm } from "../../../components/auth/login/LoginForm";
+import { SuccessScreen } from "../../../components/auth/login/SuccessScreen";
+import { styles } from "../../../components/auth/login/login.styles";
 
 type LoginStep = "welcome" | "login" | "success";
 

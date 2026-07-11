@@ -11,7 +11,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onGetStarted }) =>
   return (
     <View style={styles.container}>
       <Image
-        source={require("../../../assets/images/loginSignup/welcome.svg")}
+        source={require("../../../../assets/images/loginSignup/welcome.svg")}
         style={styles.topImage}
         contentFit="cover"
       />
