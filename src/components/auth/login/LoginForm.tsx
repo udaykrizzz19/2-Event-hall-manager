@@ -160,7 +160,11 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
           </View>
 
           {/* Google Login Button */}
-          <TouchableOpacity style={styles.googleButton} activeOpacity={0.8}>
+          <TouchableOpacity
+            style={styles.googleButton}
+            activeOpacity={0.8}
+            onPress={onLoginSuccess}
+          >
             <View style={styles.googleIconContainer}>
               <Image
                 source={require("../../../../assets/images/loginSignup/google_logo.svg")}

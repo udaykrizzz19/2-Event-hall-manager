@@ -8,6 +8,7 @@ import {
   SafeAreaView,
 } from "react-native";
 import { Image } from "expo-image";
+import { useRouter } from "expo-router";
 import { styles } from "./CreateAccount.styles";
 
 interface CreateAccountProps {
@@ -15,6 +16,7 @@ interface CreateAccountProps {
 }
 
 export const CreateAccount: React.FC<CreateAccountProps> = ({ onContinue }) => {
+  const router = useRouter();
   const [value, setValue] = useState("");
   const isEmailValid = value.includes("@") && value.includes(".");
 
@@ -88,7 +90,11 @@ export const CreateAccount: React.FC<CreateAccountProps> = ({ onContinue }) => {
           </View>
 
           {/* Google Button */}
-          <TouchableOpacity style={styles.googleButton} activeOpacity={0.8}>
+          <TouchableOpacity
+            style={styles.googleButton}
+            activeOpacity={0.8}
+            onPress={() => router.replace("/login?step=success")}
+          >
             <View style={styles.googleIconContainer}>
               <Image
                 source={require("../../../../assets/images/loginSignup/google_logo.svg")}

@@ -164,7 +164,11 @@ export const SignupForm: React.FC<SignupFormProps> = ({ onSignupSuccess }) => {
           </View>
 
           {/* Google Signup Button */}
-          <TouchableOpacity style={styles.googleButton} activeOpacity={0.8}>
+          <TouchableOpacity
+            style={styles.googleButton}
+            activeOpacity={0.8}
+            onPress={() => router.replace("/login?step=success")}
+          >
             <View style={styles.googleIconContainer}>
               <Image
                 source={require("../../../../assets/images/loginSignup/google_logo.svg")}
