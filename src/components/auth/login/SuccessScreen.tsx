@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Image } from "expo-image";
 import { styles } from "./SuccessScreen.styles";
 
@@ -15,7 +16,7 @@ export const SuccessScreen: React.FC<SuccessScreenProps> = ({ onExplore }) => {
         <View style={styles.illustrationContainer}>
           <Image
             source={require("../../../../assets/images/loginSignup/Success_screen.svg")}
-            style={{ width: 280, height: 280 }}
+            style={{ width: 280, height: 280, marginLeft: 30 }}
             contentFit="contain"
           />
         </View>

@@ -5,8 +5,8 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
-  SafeAreaView,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import { styles } from "./CreateAccount.styles";
@@ -18,11 +18,18 @@ interface CreateAccountProps {
 export const CreateAccount: React.FC<CreateAccountProps> = ({ onContinue }) => {
   const router = useRouter();
   const [value, setValue] = useState("");
-  const isEmailValid = value.includes("@") && value.includes(".");
+  const [showError, setShowError] = useState(false);
+  // Email or phone validation check (phone: 10-15 digits, email: standard pattern)
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^\+?[0-9]{10,15}$/;
+  const isEmailValid = emailRegex.test(value) || phoneRegex.test(value);
 
   const handleContinue = () => {
-    if (value.trim()) {
+    if (isEmailValid) {
+      setShowError(false);
       onContinue();
+    } else {
+      setShowError(true);
     }
   };
 
@@ -69,7 +76,10 @@ export const CreateAccount: React.FC<CreateAccountProps> = ({ onContinue }) => {
               placeholder="Hello@tyler.com"
               placeholderTextColor="#cbd5e1"
               value={value}
-              onChangeText={setValue}
+              onChangeText={(text) => {
+                setValue(text.replace(/\s/g, ""));
+                if (showError) setShowError(false);
+              }}
               autoCapitalize="none"
               autoCorrect={false}
             />
@@ -81,6 +91,11 @@ export const CreateAccount: React.FC<CreateAccountProps> = ({ onContinue }) => {
               </View>
             )}
           </View>
+          {showError && (
+            <Text style={{ color: "#d90404", fontSize: 12, marginTop: 6, fontWeight: "500", paddingHorizontal: 4 }}>
+              Enter valid email or phone number
+            </Text>
+          )}
 
           {/* Divider */}
           <View style={styles.separatorContainer}>

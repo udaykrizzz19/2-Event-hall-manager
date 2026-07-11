@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
     paddingHorizontal: 28,
-    paddingTop: 80,
+    paddingTop: 50,
     paddingBottom: 32,
   },
   headerContainer: {
