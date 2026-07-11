@@ -18,16 +18,23 @@ interface LoginFormProps {
 export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
   const router = useRouter();
   const [email, setEmail] = useState("");
+  const [showEmailError, setShowEmailError] = useState(false);
   const [password, setPassword] = useState("");
   const [emailFocused, setEmailFocused] = useState(false);
   const [passwordFocused, setPasswordFocused] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
 
-  // Basic email validation check
-  const isEmailValid = email.includes("@") && email.includes(".");
+  // Email or phone validation check (phone: 10-15 digits, email: standard pattern)
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^\+?[0-9]{10,15}$/;
+  const isEmailValid = emailRegex.test(email) || phoneRegex.test(email);
 
   const handleSignIn = () => {
-    // If fields are not empty, simulate success
+    if (!isEmailValid) {
+      setShowEmailError(true);
+      return;
+    }
+    setShowEmailError(false);
     if (email.trim() && password.trim()) {
       onLoginSuccess();
     }
@@ -74,7 +81,10 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
               placeholder="Enter your email"
               placeholderTextColor="#a0aec0"
               value={email}
-              onChangeText={setEmail}
+              onChangeText={(text) => {
+                setEmail(text.replace(/\s/g, ""));
+                if (showEmailError) setShowEmailError(false);
+              }}
               onFocus={() => setEmailFocused(true)}
               onBlur={() => setEmailFocused(false)}
               keyboardType="email-address"
@@ -88,6 +98,11 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
               </View>
             )}
           </View>
+          {showEmailError && (
+            <Text style={{ color: "#d90404", fontSize: 12, marginTop: 6, fontWeight: "500", paddingHorizontal: 4 }}>
+              Enter valid email or phone number
+            </Text>
+          )}
 
           {/* Password Field */}
           <Text style={styles.label}>Password</Text>
