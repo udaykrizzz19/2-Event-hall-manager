@@ -95,11 +95,16 @@ export const styles = StyleSheet.create({
   chevronContainer: {
     justifyContent: "center",
     alignItems: "center",
+    marginRight: 4,
+    marginTop: -2,
   },
-  chevronText: {
-    fontSize: 14,
-    color: "#8a94a6",
-    fontWeight: "bold",
+  chevronArrow: {
+    width: 8,
+    height: 8,
+    borderBottomWidth: 2,
+    borderRightWidth: 2,
+    borderColor: "#8a94a6",
+    transform: [{ rotate: "45deg" }],
   },
   signUpButton: {
     backgroundColor: "#d90404",

@@ -145,7 +145,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({ onSignupSuccess }) => {
               <Text style={styles.dropdownPlaceholder}>Select User Type</Text>
             )}
             <View style={styles.chevronContainer}>
-              <Text style={styles.chevronText}>∨</Text>
+              <View style={styles.chevronArrow} />
             </View>
           </TouchableOpacity>
 
