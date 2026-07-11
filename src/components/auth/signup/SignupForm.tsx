@@ -37,10 +37,8 @@ export const SignupForm: React.FC<SignupFormProps> = ({ onSignupSuccess }) => {
   const [confirmPasswordFocused, setConfirmPasswordFocused] = useState(false);
 
   const handleSignUp = () => {
-    // If essential fields are filled, proceed to confirmation
-    if (firstName.trim() && lastName.trim() && password.trim() && confirmPassword.trim() && userType) {
-      onSignupSuccess();
-    }
+    // Directly trigger next step transition so user is not blocked during UI evaluation
+    onSignupSuccess();
   };
 
   const handleSelectOption = (option: string) => {

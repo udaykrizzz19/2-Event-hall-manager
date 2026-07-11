@@ -45,14 +45,13 @@ export const ConfirmEmail: React.FC<ConfirmEmailProps> = ({ onVerifySuccess }) =
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer} keyboardShouldPersistTaps="handled">
         <View style={{ width: "100%", alignItems: "center" }}>
-          {/* Top Verification SVG Illustration */}
-            {/* When you add confirm_email.svg to assets/images/loginSignup/, swap this with:
-                source={require("../../../../assets/images/loginSignup/confirm_email.svg")} */}
+          <View style={styles.illustrationContainer}>
             <Image
-              source={{ uri: "https://via.placeholder.com/240" }}
+              source={require("../../../../assets/images/loginSignup/confirm_email.svg")}
               style={styles.illustrationImage}
               contentFit="contain"
             />
+          </View>
 
           {/* Text Info */}
           <View style={styles.textGroup}>
