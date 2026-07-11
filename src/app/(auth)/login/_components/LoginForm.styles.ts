@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
     paddingHorizontal: 28,
-    paddingTop: 40,
+    paddingTop: 80,
     paddingBottom: 32,
   },
   headerContainer: {
@@ -148,7 +148,7 @@ export const styles = StyleSheet.create({
   logoContainer: {
     alignItems: "center",
     justifyContent: "center",
-    marginVertical: 20,
+    // marginVertical: 15,
     alignSelf: "center",
   },
   logoImage: {
