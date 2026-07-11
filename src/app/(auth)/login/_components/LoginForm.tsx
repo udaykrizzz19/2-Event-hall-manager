@@ -159,8 +159,12 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
 
           {/* Google Login Button */}
           <TouchableOpacity style={styles.googleButton} activeOpacity={0.8}>
-            <View style={[styles.googleIconContainer, { width: 24, height: 24, borderRadius: 12, backgroundColor: "#ffffff", borderWidth: 1, borderColor: "#edf2f7", alignItems: "center", justifyContent: "center" }]}>
-              <Text style={{ fontSize: 13, fontWeight: "bold", color: "#4285F4" }}>G</Text>
+            <View style={styles.googleIconContainer}>
+              <Image
+                source={require("../../../../../assets/images/loginSignup/google_logo.svg")}
+                style={{ width: 22, height: 22 }}
+                contentFit="contain"
+              />
             </View>
             <Text style={styles.googleButtonText}>Log In with Google</Text>
           </TouchableOpacity>
