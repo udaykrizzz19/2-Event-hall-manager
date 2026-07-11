@@ -35,8 +35,8 @@ export const styles = StyleSheet.create({
     marginBottom: 16,
   },
   logoImage: {
-    width: 56,
-    height: 56,
+    width: 65,
+    height: 65,
   },
   illustrationContainer: {
     width: "100%",
