@@ -15,7 +15,7 @@ export const SuccessScreen: React.FC<SuccessScreenProps> = ({ onExplore }) => {
         <View style={styles.illustrationContainer}>
           <Image
             source={require("../../../../assets/images/loginSignup/Success_screen.svg")}
-            style={{ width: 280, height: 280 }}
+            style={{ width: 280, height: 280, marginLeft: 30 }}
             contentFit="contain"
           />
         </View>
