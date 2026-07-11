@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     paddingHorizontal: 28,
-    paddingTop: 24,
+    // paddingTop: 14,
     justifyContent: "space-between",
     paddingBottom: 48,
   },
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     marginTop: 10,
   },
   title: {
-    fontSize: 28,
+    fontSize: 35,
     fontWeight: "700",
     color: "#000000",
     lineHeight: 38,
