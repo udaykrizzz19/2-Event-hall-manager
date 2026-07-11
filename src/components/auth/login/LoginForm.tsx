@@ -154,7 +154,11 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
           </View>
 
           {/* Forgot Password */}
-          <TouchableOpacity style={styles.forgotPasswordContainer} activeOpacity={0.7}>
+          <TouchableOpacity
+            style={styles.forgotPasswordContainer}
+            activeOpacity={0.7}
+            onPress={() => router.replace("/forgot-password" as any)}
+          >
             <Text style={styles.forgotPasswordText}>Forgot password</Text>
           </TouchableOpacity>
 
